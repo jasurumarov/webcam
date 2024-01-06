@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Cam</title>
+</head>
+<body>
+    <video src="" height="100%"></video>
+
+    <script>
+        const videoElement = document.querySelector("video")
+        navigator.mediaDevices.getUserMedia({video: true})
+        .then(stream => videoElement.srcObject = stream)
+        .catch((e) => {
+            console.log(e);
+        });
+    </script>
+</body>
+</html>
